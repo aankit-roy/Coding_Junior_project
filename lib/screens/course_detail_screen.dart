@@ -114,68 +114,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
       ),
     );
 
-    // return Container(
-    //   color: Colors.white,
-    //   child: SafeArea(
-    //
-    //     child: Scaffold(
-    //       backgroundColor: AppColors.backgroundColor,
-    //
-    //       body: SingleChildScrollView(
-    //         child: Padding(
-    //           padding: const EdgeInsets.all(16.0),
-    //           child: Column(
-    //             crossAxisAlignment: CrossAxisAlignment.start,
-    //             children: [
-    //               customAppBar(),
-    //               SizedBox(height: 16.h,),
-    //               // Course Details Section
-    //               const CourseDetails(
-    //                 courseName: 'Photoshop Editing Course',
-    //                 description:
-    //                 'A representation that can convey the three-dimensional aspect of a design through a two-dimensional medium.',
-    //                 lessons: 30,
-    //                 totalTime: '13h 30min',
-    //               ),
-    //               Padding(
-    //                 padding: const EdgeInsets.all(8.0),
-    //                 child: SectionHeader(title: "Video"),
-    //               ),
-    //               // Video List Section
-    //               ListView(
-    //                 shrinkWrap: true,
-    //                 physics: NeverScrollableScrollPhysics(),
-    //                 children: [
-    //                   CourseVideoItem(
-    //                     title: 'Introduction',
-    //                     duration: '3h 30min',
-    //                     isLocked: true,
-    //                   ),
-    //                   CourseVideoItem(
-    //                     title: 'Install Software',
-    //                     duration: '1h 30min',
-    //                     isLocked: false,
-    //                   ),
-    //                   CourseVideoItem(
-    //                     title: 'Learn Tools',
-    //                     duration: '2h 30min',
-    //                     isLocked: false,
-    //                   ),
-    //                   CourseVideoItem(
-    //                     title: 'Tracing Sketsa',
-    //                     duration: '2h 30min',
-    //                     isLocked: true,
-    //                   ),
-    //                 ],
-    //               ),
-    //             ],
-    //           ),
-    //         ),
-    //       ),
-    //       bottomNavigationBar:  bottomNavBar(),
-    //     ),
-    //   ),
-    // );
+
   }
 
   Container bottomNavBar() {
