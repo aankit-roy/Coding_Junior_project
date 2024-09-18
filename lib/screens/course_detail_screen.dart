@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:online_course/components/constants/app_color.dart';
-import 'package:online_course/components/widgets/card_info.dart';
 import 'package:online_course/components/widgets/course_details.dart';
 import 'package:online_course/components/widgets/course_video_items.dart';
 import 'package:online_course/components/widgets/section_holder.dart';

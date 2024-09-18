@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
 import 'package:online_course/components/constants/app_color.dart';
-import 'package:online_course/components/widgets/card_info.dart';
 import 'package:online_course/screens/home_screen.dart';
 
 class PaymentSuccessfulScreen extends StatefulWidget {
@@ -41,7 +40,6 @@ class _PaymentSuccessfulScreenState extends State<PaymentSuccessfulScreen>
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: SingleChildScrollView(
 
