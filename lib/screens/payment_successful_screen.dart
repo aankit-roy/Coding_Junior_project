@@ -43,16 +43,19 @@ class _PaymentSuccessfulScreenState extends State<PaymentSuccessfulScreen>
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            lottieDetailsWidget(),
-            SizedBox(height: 10.h,),
-            doneButtonWidget(),
-          ],
+      body: SingleChildScrollView(
+
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              lottieDetailsWidget(),
+              SizedBox(height: 10.h,),
+              doneButtonWidget(),
+            ],
+          ),
         ),
       ),
     );

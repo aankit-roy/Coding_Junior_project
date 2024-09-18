@@ -87,14 +87,14 @@ class _CourseDetailScreenState extends State<CourseDetailScreen> {
                     lessons: 30,
                     totalTime: '13h 30min',
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
+                  const Padding(
+                    padding: EdgeInsets.all(8.0),
                     child: SectionHeader(title: "Video"),
                   ),
                   // Video List Section using ListView.builder
                   ListView.builder(
                     shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
+                    physics: const NeverScrollableScrollPhysics(),
                     itemCount: videoItems.length,
                     itemBuilder: (context, index) {
                       final video = videoItems[index];

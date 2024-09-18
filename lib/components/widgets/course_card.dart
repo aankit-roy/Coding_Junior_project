@@ -8,7 +8,6 @@ import 'package:online_course/components/widgets/course_card_participants.dart';
 import 'package:online_course/components/widgets/section_holder.dart';
 import 'package:online_course/screens/course_detail_screen.dart';
 
-
 class CourseCard extends StatelessWidget {
   final String courseIconPath; // Changed to String to store the asset path
   final String courseName;
@@ -77,82 +76,48 @@ class CourseCard extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
             ),
             const SizedBox(height: 8),
-            // Participants section
-            // Row(
-            //   children: [
-            //     Stack(
-            //       children: [
-            //         // First participant
-            //         Positioned(
-            //           left: 0,
-            //           child: CircleAvatar(
-            //             radius: 15,
-            //             backgroundImage: AssetImage(participantImages[0]), // Assuming image from assets
-            //           ),
-            //         ),
-            //         // Second participant (slightly overlapping)
-            //         Positioned(
-            //           left: 20,
-            //           child: CircleAvatar(
-            //             radius: 15,
-            //             backgroundImage: AssetImage(participantImages[1]),
-            //           ),
-            //         ),
-            //         // Third participant (slightly overlapping)
-            //         Positioned(
-            //           left: 40,
-            //           child: CircleAvatar(
-            //             radius: 15,
-            //             backgroundImage: AssetImage(participantImages[2]),
-            //           ),
-            //         ),
-            //         // Additional participants (green circle with "+20")
-            //         Positioned(
-            //           left: 60,
-            //           child: CircleAvatar(
-            //             radius: 15,
-            //             backgroundColor: Colors.green,
-            //             child: Text(
-            //               '+$additionalParticipants',
-            //               style: const TextStyle(
-            //                 color: Colors.white,
-            //                 fontSize: 12,
-            //               ),
-            //             ),
-            //           ),
-            //         ),
-            //       ],
-            //     ),
-            //     const SizedBox(width: 8),
-            // Participant text
-
-            //   ],
-            // ),
-
-            // Text(
-            //   '$participants Participants',
-            //   style: const TextStyle(color: Colors.grey, fontSize: 12),
-            // ),
-            Padding(
-              padding: const EdgeInsets.all(4.0),
+            Flexible(
               child: Row(
                 children: [
-                  Text(
-                    'Participants',
-                    style: TextStyle(
-                      fontSize: 14.sp,
-                      color: Colors.grey,
+                  Container(
+                    width: 80.w,
+                    height: 20.h,
+                    child: Stack(
+                      children: [
+                        // First participant
+                        participantsProfile(leftShifting: 0,profileImg: "assets/images/person1.jpg"),
+
+                        // Second participant (slightly overlapping)
+                        participantsProfile(leftShifting: 14,profileImg: "assets/images/person2.jpg"),
+                        participantsProfile(leftShifting: 28,profileImg: "assets/images/person3.jpeg"),
+
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: Row(
+                      children: [
+                        Text(
+                          'Participants',
+                          style: TextStyle(
+                            fontSize: 14.sp,
+                            color: Colors.grey,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],
               ),
             ),
-            // SizedBox(height: 20.h,),
+
+
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 10),
               child: Divider(
-                color: Colors.grey.shade200,    // Set the color of the divider
-                thickness: 2,          // Set the thickness of the divider
+                color: Colors.grey.shade200, // Set the color of the divider
+                thickness: 2, // Set the thickness of the divider
                 // Right padding
               ),
             ),
@@ -167,11 +132,10 @@ class CourseCard extends StatelessWidget {
                     ),
                     Text(
                       rating.toString(),
-                      style:  TextStyle(
+                      style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 14.sp,
-                          color: Colors.grey
-                      ),
+                          color: Colors.grey),
                     ),
                   ],
                 ),
@@ -179,17 +143,45 @@ class CourseCard extends StatelessWidget {
                   children: [
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 4),
-                      child: Icon(Icons.play_circle_outline_rounded,size: 18,color: Colors.grey.shade400,),
+                      child: Icon(
+                        Icons.play_circle_outline_rounded,
+                        size: 18,
+                        color: Colors.grey.shade400,
+                      ),
                     ),
                     Text(
                       '$lessons Lessons',
-                      style:  TextStyle(fontSize: 12.sp, color: Colors.grey),
+                      style: TextStyle(fontSize: 12.sp, color: Colors.grey),
                     ),
                   ],
                 ),
               ],
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  Positioned participantsProfile({required String profileImg, required double leftShifting}) {
+    return Positioned(
+      left: leftShifting, // Adjust this value for the overlap
+      child: Container(
+        width:
+            24.w, // Width equals twice the radius of the CircleAvatar (radius + border)
+        height:
+            22.h, // Height equals twice the radius of the CircleAvatar (radius + border)
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          border: Border.all(
+            color: Colors.white, // The color of the border
+            width: 2.0, // Border thickness
+          ),
+        ),
+        child: CircleAvatar(
+          radius: 12, // CircleAvatar radius
+          backgroundImage: AssetImage(
+              profileImg), // The image for the CircleAvatar
         ),
       ),
     );
